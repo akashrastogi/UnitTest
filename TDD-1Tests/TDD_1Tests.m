@@ -47,4 +47,10 @@ ViewController *viewController;
 {
     [viewController celsiusToFarenhite:-1.0];
 }
+
+- (void)testWithOnePointThree
+{
+    [viewController celsiusToFarenhite:1.3];
+}
+
 @end
