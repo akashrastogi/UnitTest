@@ -38,4 +38,8 @@ ViewController *viewController;
     [viewController celsiusToFarenhite:1];
 }
 
+- (void)testWithTwo
+{
+    [viewController celsiusToFarenhite:2.0];
+}
 @end
