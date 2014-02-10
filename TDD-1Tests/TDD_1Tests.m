@@ -42,4 +42,9 @@ ViewController *viewController;
 {
     [viewController celsiusToFarenhite:2.0];
 }
+
+- (void)testWithMinusOne
+{
+    [viewController celsiusToFarenhite:-1.0];
+}
 @end
