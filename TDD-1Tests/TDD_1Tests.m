@@ -33,4 +33,9 @@ ViewController *viewController;
     [viewController celsiusToFarenhite:0];
 }
 
+- (void)testWithOne
+{
+    [viewController celsiusToFarenhite:1];
+}
+
 @end
