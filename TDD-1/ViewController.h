@@ -10,4 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *txtCelsius;
+- (IBAction)btnConverterClicked:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnConverter;
+
+-(float)celsiusToFarenhite :(float)celsius;
 @end

@@ -26,4 +26,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)btnConverterClicked:(UIButton *)sender {
+    float celsius = [_txtCelsius.text floatValue];
+    float farenhite = [self celsiusToFarenhite:celsius];
+    [[[UIAlertView alloc]initWithTitle:@"conversion result" message:[NSString stringWithFormat:@"%f celsius = %f farenhite", celsius, farenhite] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil]show];
+}
+-(float)celsiusToFarenhite :(float)celsius{
+    float farenhite = (1.8 * celsius) + 32;
+    return farenhite;
+}
 @end
