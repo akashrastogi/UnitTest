@@ -25,4 +25,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(int)celsiusToFarenhite :(int)celsius{
+    return 32;
+}
 @end
