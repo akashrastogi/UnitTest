@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+-(int)celsiusToFarenhite :(int)celsius;
 @end
