@@ -7,17 +7,18 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "ViewController.h"
 @interface TDD_2Tests : XCTestCase
 
 @end
-
+ViewController *viewController;
 @implementation TDD_2Tests
 
 - (void)setUp
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    viewController = [[ViewController alloc]init];
 }
 
 - (void)tearDown
@@ -26,9 +27,14 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testWithZero
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    int celsius = 0;
+    int desiredFarenheie = 32;
+    
+    int actualFarenheie = [viewController celsiusToFarenhite:celsius];
+    
+    XCTAssertEqual(desiredFarenheie, actualFarenheie, @"Test is failed.");
 }
 
 @end
