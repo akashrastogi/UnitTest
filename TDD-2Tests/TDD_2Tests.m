@@ -57,4 +57,14 @@ ViewController *viewController;
     
     XCTAssertEqual(desiredFarenheie, actualFarenheie, @"Test is failed.");
 }
+
+- (void)testWithMinusOne
+{
+    int celsius = -1;
+    int desiredFarenheie = 30;
+    
+    int actualFarenheie = [viewController celsiusToFarenhite:celsius];
+    
+    XCTAssertEqual(desiredFarenheie, actualFarenheie, @"Test is failed.");
+}
 @end
