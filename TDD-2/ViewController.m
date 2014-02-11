@@ -27,9 +27,7 @@
 }
 
 -(int)celsiusToFarenhite :(int)celsius{
-    if (celsius ==0) {
-        return 32;
-    }
-    return 33;
+    int farenhite = (1.8 * celsius) + 32;
+    return farenhite;
 }
 @end
