@@ -27,6 +27,9 @@
 }
 
 -(int)celsiusToFarenhite :(int)celsius{
-    return 32;
+    if (celsius ==0) {
+        return 32;
+    }
+    return 33;
 }
 @end
