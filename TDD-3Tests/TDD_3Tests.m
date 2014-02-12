@@ -7,28 +7,38 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "ViewController.h"
 @interface TDD_3Tests : XCTestCase
 
 @end
-
+ViewController *viewController;
 @implementation TDD_3Tests
 
 - (void)setUp
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    viewController = [[ViewController alloc]init];
 }
 
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    viewController = nil;
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testOne
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSString *romanNumeral = @"I";
+    NSNumber *desiredNumber = [NSNumber numberWithInt:1];
+    NSNumber *actualNumber = [viewController romanToIntegerAndIntegertoRoman:romanNumeral];
+    XCTAssertEqual(desiredNumber, actualNumber, @"Roman to integer test is failed.");
+    
+    NSNumber *number = [NSNumber numberWithInt:1];
+    NSString *desiredRoman = @"I";
+    NSString *actualRoman = [viewController romanToIntegerAndIntegertoRoman:number];
+    XCTAssertEqual(desiredRoman, actualRoman, @"Integer to Roman test is failed");
 }
 
 @end
