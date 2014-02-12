@@ -10,4 +10,5 @@
 
 @interface ViewController : UIViewController
 
+-(id)romanToIntegerAndIntegertoRoman :(id)input;
 @end
