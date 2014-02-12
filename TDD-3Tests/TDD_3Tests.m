@@ -28,17 +28,18 @@ ViewController *viewController;
     [super tearDown];
 }
 
-- (void)testOne
+- (void)testFor_One
 {
     NSString *romanNumeral = @"I";
     NSNumber *desiredNumber = [NSNumber numberWithInt:1];
     NSNumber *actualNumber = [viewController romanToIntegerAndIntegertoRoman:romanNumeral];
     XCTAssertEqual(desiredNumber, actualNumber, @"Roman to integer test is failed.");
     
+    
     NSNumber *number = [NSNumber numberWithInt:1];
     NSString *desiredRoman = @"I";
     NSString *actualRoman = [viewController romanToIntegerAndIntegertoRoman:number];
-    XCTAssertEqual(desiredRoman, actualRoman, @"Integer to Roman test is failed");
+    XCTAssertEqualObjects(desiredRoman, actualRoman, @"Integer to Roman test is failed");
 }
 
 @end

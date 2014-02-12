@@ -26,6 +26,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+-(id)romanToIntegerAndIntegertoRoman :(id)input{
+    id output;
+    if ([input isKindOfClass:[NSNumber class]]) {
+       output = @"I";
+    }
+    else if ([input isKindOfClass:[NSString class]]){
+        output = [NSNumber numberWithInt:1];
+    }
+    
+    return output;
+}
 
 @end
