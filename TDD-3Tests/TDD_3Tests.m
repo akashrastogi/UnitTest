@@ -116,4 +116,11 @@ ViewController *viewController;
     XCTAssertEqualObjects(desiredNumber, actualNumber, @"Roman to integer test is failed.");
 }
 
+- (void)testFor_CCR
+{
+    NSString *romanNumeral = @"CCR";
+    NSNumber *desiredNumber = [NSNumber numberWithInt:-1];
+    NSNumber *actualNumber = [viewController romanToArabic:romanNumeral];
+    XCTAssertEqualObjects(desiredNumber, actualNumber, @"Roman to integer test is failed.");
+}
 @end
