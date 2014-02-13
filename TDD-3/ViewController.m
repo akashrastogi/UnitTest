@@ -32,13 +32,20 @@
         if ([input integerValue]==1) {
             output = @"I";
         }
-       else output = @"II";
+        else if ([input integerValue]==2) {
+            output = @"II";
+        }
+        else output = @"III";
+        
     }
     else if ([input isKindOfClass:[NSString class]]){
         if ([input isEqualToString:@"I"]) {
             output = [NSNumber numberWithInt:1];
         }
-        else output = [NSNumber numberWithInt:2];
+        else if ([input isEqualToString:@"II"]) {
+            output = [NSNumber numberWithInt:2];
+        }
+        else  output = [NSNumber numberWithInt:3];
     }
     
     return output;
