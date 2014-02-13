@@ -92,5 +92,13 @@ ViewController *viewController;
     XCTAssertEqual(desiredNumber, actualNumber, @"Roman to integer test is failed.");
 }
 
+- (void)testFor_Nine
+{
+    NSString *romanNumeral = @"IX";
+    NSNumber *desiredNumber = [NSNumber numberWithInt:9];
+    NSNumber *actualNumber = [viewController romanToArabic:romanNumeral];
+    XCTAssertEqual(desiredNumber, actualNumber, @"Roman to integer test is failed.");
+}
+
 
 @end
