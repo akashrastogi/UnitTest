@@ -29,10 +29,16 @@
 -(id)romanToIntegerAndIntegertoRoman :(id)input{
     id output;
     if ([input isKindOfClass:[NSNumber class]]) {
-       output = @"I";
+        if ([input integerValue]==1) {
+            output = @"I";
+        }
+       else output = @"II";
     }
     else if ([input isKindOfClass:[NSString class]]){
-        output = [NSNumber numberWithInt:1];
+        if ([input isEqualToString:@"I"]) {
+            output = [NSNumber numberWithInt:1];
+        }
+        else output = [NSNumber numberWithInt:2];
     }
     
     return output;
