@@ -44,6 +44,11 @@
     
     for (int i=[input length]; i>=1; i--) {
         NSString *current = [[input uppercaseString] substringWithRange:NSMakeRange(i-1, 1)];
+        if (![[dictSymbols allKeys]containsObject:current]) {/// invalid character found, set the value to -1 and break the loop.
+            totalValue = -1;
+            break;
+        }
+        
         currentValue = [[dictSymbols valueForKey:current]integerValue];
         
         if (currentValue < previousValue)
