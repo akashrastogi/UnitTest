@@ -56,4 +56,18 @@ ViewController *viewController;
     XCTAssertEqualObjects(desiredRoman, actualRoman, @"Integer to Roman test is failed");
 }
 
+- (void)testFor_Three
+{
+    NSString *romanNumeral = @"III";
+    NSNumber *desiredNumber = [NSNumber numberWithInt:3];
+    NSNumber *actualNumber = [viewController romanToIntegerAndIntegertoRoman:romanNumeral];
+    XCTAssertEqual(desiredNumber, actualNumber, @"Roman to integer test is failed.");
+    
+    
+    NSNumber *number = [NSNumber numberWithInt:3];
+    NSString *desiredRoman = @"III";
+    NSString *actualRoman = [viewController romanToIntegerAndIntegertoRoman:number];
+    XCTAssertEqualObjects(desiredRoman, actualRoman, @"Integer to Roman test is failed");
+}
+
 @end
