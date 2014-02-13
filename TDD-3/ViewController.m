@@ -43,7 +43,7 @@
     int currentValue =0; // This will hold the value of the current Roman Numeral character.
     
     for (int i=[input length]; i>=1; i--) {
-        NSString *current = [input substringWithRange:NSMakeRange(i-1, 1)];
+        NSString *current = [[input uppercaseString] substringWithRange:NSMakeRange(i-1, 1)];
         currentValue = [[dictSymbols valueForKey:current]integerValue];
         
         if (currentValue < previousValue)
