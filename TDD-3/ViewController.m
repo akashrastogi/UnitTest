@@ -47,7 +47,10 @@
         else if ([input integerValue]==6) {
             output = @"VI";
         }
-        else output = @"VII";
+        else if ([input integerValue]==7) {
+            output = @"VII";
+        }
+        else output = @"VIII";
         
     }
     else if ([input isKindOfClass:[NSString class]]){
@@ -69,7 +72,10 @@
         else if ([input isEqualToString:@"VI"]) {
             output = [NSNumber numberWithInt:6];
         }
-        else  output = [NSNumber numberWithInt:7];
+        else if ([input isEqualToString:@"VII"]) {
+            output = [NSNumber numberWithInt:7];
+        }
+        else  output = [NSNumber numberWithInt:8];
     }
     
     return output;
