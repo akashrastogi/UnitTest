@@ -123,4 +123,12 @@ ViewController *viewController;
     NSNumber *actualNumber = [viewController romanToArabic:romanNumeral];
     XCTAssertEqualObjects(desiredNumber, actualNumber, @"Roman to integer test is failed.");
 }
+
+- (void)testFor_FourNineNineNine
+{
+    NSString *romanNumeral = @"MMMMCMXCIX";
+    NSNumber *desiredNumber = [NSNumber numberWithInt:4999];
+    NSNumber *actualNumber = [viewController romanToArabic:romanNumeral];
+    XCTAssertEqualObjects(desiredNumber, actualNumber, @"Roman to integer test is failed.");
+}
 @end
