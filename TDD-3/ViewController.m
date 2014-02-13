@@ -19,7 +19,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self romanToArabic:@"CCLD"];
+    [self romanToArabic:@"VI"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,20 +43,16 @@
     int previousValue = 0; // Set the value of the previous pointer to some MIN value.
     int currentValue =0; // This will hold the value of the current Roman Numeral character.
     
-    for (int i=[input length]; i>1; i--) {
+    for (int i=[input length]; i>=1; i--) {
         NSString *current = [input substringWithRange:NSMakeRange(i-1, 1)];
         currentValue = [[dictSymbols valueForKey:current]integerValue];
         
-        totalValue = totalValue + currentValue;
-
-        NSString *previous = [input substringWithRange:NSMakeRange(i-1-1, 1)];
-        previousValue = [[dictSymbols valueForKey:previous]integerValue];
+        if (currentValue < previousValue)
+            totalValue = totalValue - currentValue;
+        else
+            totalValue = totalValue + currentValue;
         
-        //if (currentValue < previousValue)
-            totalValue = totalValue - previousValue;
-        //else
-          //  totalValue = totalValue + currentValue;
-        
+        previousValue = currentValue  ;
     }
     NSNumber *output = [NSNumber numberWithInteger:totalValue];
     return output;
