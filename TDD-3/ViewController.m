@@ -18,6 +18,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self romanToArabic:@"CCLD"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -27,31 +29,36 @@
 }
 
 -(id)romanToArabic :(NSString *)input{
-    NSNumber *output;
-    {
-        if ([input isEqualToString:@"I"]) {
-            output = [NSNumber numberWithInt:1];
-        }
-        else if ([input isEqualToString:@"II"]) {
-            output = [NSNumber numberWithInt:2];
-        }
-        else if ([input isEqualToString:@"III"]) {
-            output = [NSNumber numberWithInt:3];
-        }
-        else if ([input isEqualToString:@"IV"]) {
-            output = [NSNumber numberWithInt:4];
-        }
-        else if ([input isEqualToString:@"V"]) {
-            output = [NSNumber numberWithInt:5];
-        }
-        else if ([input isEqualToString:@"VI"]) {
-            output = [NSNumber numberWithInt:6];
-        }
-        else if ([input isEqualToString:@"VII"]) {
-            output = [NSNumber numberWithInt:7];
-        }
-        else  output = [NSNumber numberWithInt:8];
+    NSDictionary *dictSymbols = @{
+                                  @"M": [NSNumber numberWithInt:1000],
+                                  @"D": [NSNumber numberWithInt:500],
+                                  @"C": [NSNumber numberWithInt:100],
+                                  @"L": [NSNumber numberWithInt:50],
+                                  @"X": [NSNumber numberWithInt:10],
+                                  @"V": [NSNumber numberWithInt:5],
+                                  @"I": [NSNumber numberWithInt:1]
+                                  };
+    
+    int totalValue = 0; // hold the total value of the roman numeral
+    int previousValue = 0; // Set the value of the previous pointer to some MIN value.
+    int currentValue =0; // This will hold the value of the current Roman Numeral character.
+    
+    for (int i=[input length]; i>1; i--) {
+        NSString *current = [input substringWithRange:NSMakeRange(i-1, 1)];
+        currentValue = [[dictSymbols valueForKey:current]integerValue];
+        
+        totalValue = totalValue + currentValue;
+
+        NSString *previous = [input substringWithRange:NSMakeRange(i-1-1, 1)];
+        previousValue = [[dictSymbols valueForKey:previous]integerValue];
+        
+        //if (currentValue < previousValue)
+            totalValue = totalValue - previousValue;
+        //else
+          //  totalValue = totalValue + currentValue;
+        
     }
+    NSNumber *output = [NSNumber numberWithInteger:totalValue];
     return output;
 }
 
