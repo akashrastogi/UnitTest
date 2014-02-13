@@ -10,5 +10,5 @@
 
 @interface ViewController : UIViewController
 
--(id)romanToIntegerAndIntegertoRoman :(id)input;
+-(id)romanToArabic :(NSString *)input;
 @end

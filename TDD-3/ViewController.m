@@ -26,34 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
--(id)romanToIntegerAndIntegertoRoman :(id)input{
-    id output;
-    if ([input isKindOfClass:[NSNumber class]]) {
-        if ([input integerValue]==1) {
-            output = @"I";
-        }
-        else if ([input integerValue]==2) {
-            output = @"II";
-        }
-        else if ([input integerValue]==3) {
-            output = @"III";
-        }
-        else if ([input integerValue]==4) {
-            output = @"IV";
-        }
-        else if ([input integerValue]==5) {
-            output = @"V";
-        }
-        else if ([input integerValue]==6) {
-            output = @"VI";
-        }
-        else if ([input integerValue]==7) {
-            output = @"VII";
-        }
-        else output = @"VIII";
-        
-    }
-    else if ([input isKindOfClass:[NSString class]]){
+-(id)romanToArabic :(NSString *)input{
+    NSNumber *output;
+    {
         if ([input isEqualToString:@"I"]) {
             output = [NSNumber numberWithInt:1];
         }
@@ -77,7 +52,6 @@
         }
         else  output = [NSNumber numberWithInt:8];
     }
-    
     return output;
 }
 
