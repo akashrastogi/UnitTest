@@ -38,7 +38,10 @@
         else if ([input integerValue]==3) {
             output = @"III";
         }
-        else output = @"IV";
+        else if ([input integerValue]==4) {
+            output = @"IV";
+        }
+        else output = @"V";
         
     }
     else if ([input isKindOfClass:[NSString class]]){
@@ -51,7 +54,10 @@
         else if ([input isEqualToString:@"III"]) {
             output = [NSNumber numberWithInt:3];
         }
-        else  output = [NSNumber numberWithInt:4];
+        else if ([input isEqualToString:@"IV"]) {
+            output = [NSNumber numberWithInt:4];
+        }
+        else  output = [NSNumber numberWithInt:5];
     }
     
     return output;
